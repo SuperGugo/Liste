@@ -7,6 +7,31 @@ public class Lista {
         root = new Nodo();
     }
 
+    public void add( String s ) {
+        addTail(s);
+    }
+
+    public void remove( String s ) {
+        Nodo x = root;
+        while (x.getNext() != null) {
+            if (x.getNext().getValue().equals(s)) {
+                    x.setNext(x.getNext().getNext());
+                len--;
+                break;
+            } 
+            x = x.getNext();
+        }
+    }
+
+    public boolean exists( String s ) {
+        Nodo x = root;
+        while (x.getNext() != null) {
+            x = x.getNext();
+            if (x.getValue().equals(s)) return true;
+        }
+        return false;
+    }
+
     public void addTail(String value) {
         Nodo x = root;
         while (x.getNext() != null) {

@@ -4,7 +4,9 @@ public class App {
         l.addHead("mario");
         l.addHead("giulio");
         l.addHead("francesco");
+        l.remove("giulio");
         
         System.out.println(l);
+        System.out.println(l.exists("francesco"));
     }
 }
